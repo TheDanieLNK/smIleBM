@@ -50,3 +50,13 @@ def predict():
         else:
             res = "Smiling"
         return res
+
+
+if __name__ == "__main__":
+    ON_HEROKU = os.environ.get('ON_HEROKU')
+
+    if ON_HEROKU:
+        # get the heroku port
+	port = int(os.environ.get('PORT', 5000)) 
+    else:
+	port = 3000
