@@ -17,7 +17,6 @@ app = Flask(__name__)
 global model, graph
 model, graph = init()
 
-
 # decoding an image from base64 into raw representation
 def convertImageFromBase64(encImg):
     imgstr = re.search(b'base64,(.*)', encImg).group(1)
@@ -53,10 +52,5 @@ def predict():
 
 
 if __name__ == "__main__":
-    ON_HEROKU = os.environ.get('ON_HEROKU')
-
-    if ON_HEROKU:
-        # get the heroku port
-	port = int(os.environ.get('PORT', 5000)) 
-    else:
-	port = 3000
+	port = int(os.environ.get("PORT", 5000))
+	app.run(host='0.0.0.0', port=port)
