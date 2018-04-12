@@ -22,6 +22,12 @@
         <span style="color: #4DAF7C; font-weight: 400; font-family: 'Open Sans', Helvetica;">
             <b>Select an image with a person's face and smIleBM will try to predict if they are
                 smiling or not...</b>
+		<br/><br/>
+		<span style="color: #000">This beta v1 application assumes the sample image is a cut-out close-up picture of a person's face
+		without any extra pixels or a background. A newer update would use a Haar cascade classifier to extract the facial
+		region of interest from a wider range of images before classification. You can find test image samples at 
+		<a href="https://github.com/TheDanieLNK/smIleBM" target="_blank">My Github</a></span>
+		<br/><br/>
                 <input type='file' id="clearButton" value="Select Image" onchange="readURL(this);"/>
         </span>
     </div>
